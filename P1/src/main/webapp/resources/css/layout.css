@@ -75,7 +75,7 @@
 
 .footerFrame_div{
 	background-color : black;
-	width : 800px;
+	width : 1000px;
 	height : 380px;
 	margin : 0 auto;
 }
@@ -97,6 +97,6 @@
 }
 
 .footerFrame_div_right img{
-	width : 300px;
+	width : 490px;
 	height : 280px;
 }

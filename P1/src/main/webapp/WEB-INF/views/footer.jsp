@@ -16,7 +16,7 @@ $(document).ready(function(){
 		<div class="footerFrame_div">
 			<div class="footerFrame_div_left">
 			<span style="font-weight : bold; font-size : 26px;">
-			P1 Coatings Korea
+			P1 Coatings Korea Center.
 			</span><br><br>
 			<span>
 			도로명 : 부산 서구 충무대로 221 R3모터스
@@ -28,7 +28,7 @@ $(document).ready(function(){
 			우편번호 49256
 			</span><br><br><br><br><br><br>
 			<span>
-			대표 : 서정호
+			대표 : 정민호
 			</span><br><br>
 			<span>
 			연락처 : 0507-1439-8272

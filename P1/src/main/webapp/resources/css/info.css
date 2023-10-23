@@ -10,11 +10,47 @@
 .infoFrame_div1{
 	margin-top : 110px;
 	width : 100%;
-	height : 700px;
+	height : 650px;
 	background-color : black;
 	text-align : center;
 }
 
-.carImg2{
-	display : none;
+.infoFrame_div2_1{
+	width : 100%;
+	height : 70px;
+	text-align : center;
+	margin : 0 auto;
+	color : white;
+	font-weight : bold;
+	font-size : 40px;
+}
+
+.infoFrame_div2_2{
+	width : 1200px;
+	height : 280px;
+	line-height: 1.5;
+	text-align : center;
+	margin : 0 auto;
+	color : white;
+}
+
+.infoFrame_div3{
+	width : 100%;
+	background-color : black;
+	text-align : center;
+}
+
+.infoFrame_div4{
+	width : 1000px;
+	height : 300px;
+	text-align : center;
+	margin : 0 auto;
+	color : white;
+	line-height: 1.5;
+}
+
+.infoFrame_div4_blank{
+	width : 100%;
+	height : 60px;
+	background-color : black;
 }

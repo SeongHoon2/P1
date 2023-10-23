@@ -69,10 +69,10 @@ $(document).ready(function(){
 				<img alt="logo" src="resources/img/title.png">
 			</div>
 			<div class="headerDiv_menu">
-				<button class="menuBtn" id="homeBtn">홈</button>
-				<button class="menuBtn" id="infoBtn">기업 정보</button>
-				<button class="menuBtn" id="downBtn">자료</button>
-				<button class="menuBtn" id="productBtn">제품 소개</button>
+				<button class="menuBtn" id="homeBtn">홈</button>&nbsp;&nbsp;
+				<button class="menuBtn" id="infoBtn">필러블페인트</button>&nbsp;&nbsp;
+				<button class="menuBtn" id="productBtn">제품 소개</button>&nbsp;&nbsp;
+				<button class="menuBtn" id="downBtn">자료</button>&nbsp;&nbsp;
 				<button class="menuBtn" id="qnaBtn">문의</button>
 			</div>
 			<div class="headerDiv_link">
