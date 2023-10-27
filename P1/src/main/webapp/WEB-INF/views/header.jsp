@@ -11,16 +11,24 @@
 $(document).ready(function(){
 	var urlTxt = $(location).attr('pathname').trim().split("/")[1];
 	$("#"+urlTxt+"Btn").addClass("menuBtn_sel");
+	if(urlTxt==""){
+		$("#homeBtn").addClass("menuBtn_sel");
+	}
 	
-	$("#homeBtn, #infoBtn, #downBtn").on("click", function(){
+	$("#infoBtn, #downBtn").on("click", function(){
 		var url = $(this).attr("id");
 		url = url.replaceAll("Btn", "");
 		url = "/" + url;
 		location.replace(url);
 	});
 	
+	$("#homeBtn").on("click", function(){
+		var url = "/";
+		location.replace(url);
+	});
+	
 	$("#productBtn").on("click", function(){
-		if(urlTxt=="home"){
+		if(urlTxt==""){
 			var offset = $(".homeFrame_div2").offset();
 			$("html, body").animate({scrollTop: offset.top-100},400);	
 		}
@@ -33,7 +41,7 @@ $(document).ready(function(){
 	});
 	
 	$("#qnaBtn").on("click", function(){
-		if(urlTxt=="home"){
+		if(urlTxt==""){
 			var offset = $(".homeFrame_div4").offset();
 			$("html, body").animate({scrollTop: offset.top-100},400);
 		}
@@ -45,7 +53,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	if(urlTxt=="home"){
+	if(urlTxt==""){
 		if($("#pageFlg").val()!=""){
 			if($("#pageFlg").val()=="1"){
 				var offset = $(".homeFrame_div2").offset();
@@ -82,7 +90,7 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
-	<form action="home" id="pageForm" method="post">
+	<form action="/" id="pageForm" method="post">
 		<input type="hidden" value="${param.pageFlg}" id="pageFlg" name="pageFlg"/>
 	</form>
 </body>

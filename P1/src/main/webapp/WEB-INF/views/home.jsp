@@ -16,6 +16,35 @@ $(document).ready(function(){
 		$(".homeFrame_div2_4_blankGray").css("display", "none");
 		$(".homeFrame_div2_4_blankPlay").css("display", "none");
 	});
+	
+	$("#ctBtn").on("click", function(){
+		var offset = $(".homeFrame_div4").offset();
+		$("html, body").animate({scrollTop: offset.top-100},400);
+	});
+	
+	$("#detailBtn").on("click", function(){
+		location.replace("info");
+	});
+	
+	$("#qaBtn").on("click", function(){
+		if($("#nameTxt").val()==""||$("#emailTxt").val()==""||$("#nationTxt").val()==""||$("#phoneTxt").val()==""||$("#noteTxt").val()==""){
+			alert("필수 항목을 모두 입력해주세요.");
+		}
+		else{
+			$("#param_name").val($("#nameTxt").val());
+			$("#param_email").val($("#emailTxt").val());
+			$("#param_category").val($("#categoryTxt").val());
+			$("#param_nation").val($("#nationTxt").val());
+			$("#param_phone").val($("#phoneTxt").val());
+			var text = $("#noteTxt").val();
+			text = text.replaceAll(/(\n|\r\n)/g, "<br>");
+			$("#param_note").val(text);
+			var confirmChk = confirm('문의 메일을 보내시겠습니까?');
+		    if(confirmChk) {
+				sendMail();
+		    }
+		}
+	});
 });
 </script>
 </head>
@@ -84,14 +113,15 @@ $(document).ready(function(){
 			</div>
 			<div class="homeFrame_div3_3">
 				<div class="homeFrame_div3_3_left">
-				필러블 페인트<br>
+				<span style="font-weight:bold;font-size:30px;">필러블 페인트</span><br><br>
 				P1 코팅은 긁힘, 마모, 파편, 먼지, 오일, 그리스, 녹, 부식 등<br>
 				차량에 해를 끼칠 수 있는 여러 요인 들로부터 차량 표면을 보호해 줍니다.<br><br>
 				P1 코팅 시스템은 또한 다양한 컬러로 가능하게 하지만,<br>
 				오리지널 차량 페인트의 외관과 느낌을 제공합니다.<br><br>
 				자동차 페인트와 동일한 특성을 유지할 수 있는 P1고객은 원하는 모든 기능을<br>
 				유지하면서 차량의 스크래치에 샌딩, 광택 또는 왁스 & 유리막 코팅을 처리할 수 있는<br>
-				옵션과 유연성을 갖추고 있습니다.
+				옵션과 유연성을 갖추고 있습니다.<br><br>
+				<button id="detailBtn" class="detailBtn">자세히</button>
 				</div>
 				<div class="homeFrame_div3_3_right">
 					<img src="resources/img/product_1.png" alt="play">
@@ -102,7 +132,7 @@ $(document).ready(function(){
 					<img src="resources/img/product_2.png" alt="play">
 				</div>
 				<div class="homeFrame_div3_4_right">
-				획기적인 자동차 관리<br><br>
+				<span style="font-weight:bold;font-size:30px;">획기적인 자동차 관리</span><br><br>
 				자동차의 혁신에 대한 열정으로 인해 P1 Car Care 라인을 개발하게 되었습니다.<br>
 				완벽을 추구하는 우리의 노력은 수천 시간에 걸친 연구 개발의 결과이며,<br>
 				오늘날 자동차 관리 시장에서 최고의 품질을 생산하고 있습니다.<br><br>
@@ -123,20 +153,20 @@ $(document).ready(function(){
 					문의하기
 				</div>
 				<div class="homeFrame_div4_div1">
-					<input type="text" class="qaTxt_2" placeHolder="이름 *"/>&nbsp;&nbsp;
-					<input type="text" class="qaTxt_2" placeHolder="이메일 *"/>
+					<input type="text" id="nameTxt" class="qaTxt_2" placeHolder="이름 *"/>&nbsp;&nbsp;
+					<input type="text" id="emailTxt" class="qaTxt_2" placeHolder="이메일 *"/>
 				</div>
 				<div class="homeFrame_div4_div2">
-					<input type="text" class="qaTxt_1" placeHolder="문의 주제"/>
+					<input type="text" id="categoryTxt" class="qaTxt_1" placeHolder="문의 주제"/>
 				</div>
 				<div class="homeFrame_div4_div3">
-					<input type="text" class="qaTxt_1" placeHolder="국가 *"/>
+					<input type="text" id="nationTxt" class="qaTxt_1" placeHolder="국가 *"/>
 				</div>
 				<div class="homeFrame_div4_div4">
-					<input type="text" class="qaTxt_1" placeHolder="연락처 *"/>
+					<input type="text" id="phoneTxt" class="qaTxt_1" placeHolder="연락처 *"/>
 				</div>
 				<div class="homeFrame_div4_div5">
-					<textarea class="qaTxt_3" placeHolder="문의 내용 *"></textarea>
+					<textarea id="noteTxt" class="qaTxt_3" placeHolder="문의 내용 *"></textarea>
 				</div>
 				<div class="homeFrame_div4_div6">
 					<button id="qaBtn" class="qaBtn">전송</button>					
@@ -144,6 +174,15 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
+	
+	<form action="#" method="post" id="qnaForm">
+		<input type="hidden" id="param_name" name="param_name"/>
+		<input type="hidden" id="param_email" name="param_email"/>
+		<input type="hidden" id="param_category" name="param_category"/>
+		<input type="hidden" id="param_nation" name="param_nation"/>
+		<input type="hidden" id="param_phone" name="param_phone"/>
+		<input type="hidden" id="param_note" name="param_note"/>
+	</form>
 </body>
 <jsp:include page="/WEB-INF/views/footer.jsp" flush="false"></jsp:include>
 </html>

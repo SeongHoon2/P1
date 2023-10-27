@@ -187,7 +187,7 @@
 .homeFrame_div3_3_left{
 	width : 498px;
 	height : auto;
-	margin-top : 141px;
+	margin-top : 100px;
 	display : inline-block;
 	color : white;
 	line-height: 1.5;
@@ -227,7 +227,7 @@
 	width : 498px;
 	height : auto;
 	vertical-align : top;
-	margin-top : 100px;
+	margin-top : 70px;
 	display : inline-block;
 	color : white;
 	line-height: 1.5;
@@ -333,6 +333,24 @@
 	width: 100px;
     height: 40px;
     font-weight : bold;
+}
+
+.detailBtn{
+	border : 1px solid white;
+	border-radius : 6px;
+	color : white;
+	background-color : transparent;
+	cursor : pointer;
+	margin-left : 180px;
+	width: 100px;
+    height: 36px;
+    font-weight : bold;
+}
+
+.detailBtn:hover{
+	color : red;
+	background-color:white;
+	transition : 200ms;
 }
 
 .homeFrame_div4_title{
